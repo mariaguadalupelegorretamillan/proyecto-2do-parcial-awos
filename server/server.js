@@ -11,10 +11,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
  
 app.get('/', function (req, res) {
-  res.send('<h1>Bienvenido a mi servidor REST(localhost)</1>');
+  res.send('<h1>Bienvenido a mi servidor REST</1>');
 });
 
 app.use(require('./routes/usuario'));
+app.use(require('./routes/categoria'));
 
 mongoose.connect('mongodb://localhost:27017/cafeteria', {
       useNewUrlParser: true,
