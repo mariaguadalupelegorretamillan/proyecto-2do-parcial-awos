@@ -8,7 +8,7 @@ app.get('/categoria', (req, res) => {
     let desde = req.query.desde || 0;
     let hasta = req.query.hasta || 5;
 
-    Categoria.find({})
+    Categoria.find({estado: true})
     .skip(Number(desde))
     .limit(Number(hasta))
     .populate('usuario', 'nombre email')
